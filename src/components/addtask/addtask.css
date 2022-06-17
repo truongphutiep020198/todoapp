@@ -1,0 +1,11 @@
+.add-task {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    height: 500px;
+}
+.add-task-form input {
+    display: flex;
+}

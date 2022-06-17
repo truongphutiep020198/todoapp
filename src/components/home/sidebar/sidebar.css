@@ -1,0 +1,12 @@
+.header-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    max-height: 200px;
+    align-items: center;
+}
+.header-sidebar .button button {
+    margin-bottom: 10px;
+    width: 92%;
+    height: 40px;
+}

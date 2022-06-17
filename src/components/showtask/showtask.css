@@ -1,0 +1,20 @@
+.show-task {
+    width: 90%;
+    display: flex;
+    border: 2px solid black;
+    height: 600px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.task-list {
+    width: 24.7%;
+    border: 1px solid black;
+    height: 24%;
+}
+.task-list div {
+    padding: 8px;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+}
