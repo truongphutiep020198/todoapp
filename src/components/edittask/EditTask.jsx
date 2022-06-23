@@ -3,8 +3,9 @@ import SideBar from "components/home/sidebar/SideBar";
 import React, { useContext, useState, useEffect } from "react";
 import "./edittask.css"
 import { GlobalContext } from 'context/GlobalState';
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, Navigate } from "react-router-dom"
 // import { v4 as uuidv4 } from 'uuid';
+
 
 
 
@@ -42,9 +43,10 @@ function EditTask() {
     const params = useParams();
     useEffect(() => {
         const taskId = params.id;
-        const selectedTask = tasks.find(task => task.id === taskId)
+        const selectedTask = editTaskList.find(task => task.id === taskId)
+        console.log(selectedTask);
         setSelectedTask(selectedTask)
-    }, [params.id, tasks])
+    }, [params.id, tasks,])
 
     const onSubmit = () => {
         const updateStatusSelectedTask = {
@@ -53,8 +55,11 @@ function EditTask() {
         }
         editTask(updateStatusSelectedTask)
     }
-    const onDelete = () => {
+    const handleDelete = () => {
         deleteTask(selectedTask)
+    }
+    const handleReset = (e) => {
+        e.preventDefault()
     }
     const onChange = (e) => {
         setSelectedTask({
@@ -69,24 +74,31 @@ function EditTask() {
                 <SideBar />
                 <div className="edit-task">
                     <form className="edit-task-form" >
-                        <label htmlFor="title">Title</label>
-                        <input type="text" placeholder="enter title" id="title"
-                            name="title"
-                            value={selectedTask?.title}
-                            onChange={onChange}
-                        /> <br />
-                        <label htmlFor="creator">Creator</label>
-                        <input type="text" placeholder="Name of creator" id="creator"
-                            name="creator"
-                            value={selectedTask?.creator}
-                            onChange={onChange}
-                        /> <br />
-                        <label htmlFor="desciption">Desciption</label>
-                        <input type="text" placeholder="Desciption Details" id="desciption"
-                            name="description"
-                            value={selectedTask?.description}
-                            onChange={onChange}
-                        /> <br />
+                        <div className="form-group">
+                            <label htmlFor="title">Title</label>
+                            <input type="text" placeholder="enter title" id="title"
+                                name="title"
+                                value={selectedTask?.title}
+                                onChange={onChange}
+                            /> <br />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="creator">Creator</label>
+                            <input type="text" placeholder="Name of creator" id="creator"
+                                name="creator"
+                                value={selectedTask?.creator}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="desciption">Desciption</label>
+                            <input type="text" placeholder="Desciption Details" id="desciption"
+                                name="description"
+                                value={selectedTask?.description}
+                                onChange={onChange}
+                            />
+                        </div>
+                        {/* <div className="form-group"> */}
                         <div className="status-list">
                             {
                                 statusList.map(item => (
@@ -101,13 +113,18 @@ function EditTask() {
                                 ))
                             }
                         </div>
-                        <br />
-                        <Link to="/">
-                            <button type="submit"
-                                onClick={onSubmit}
-                            >Save</button>
-                            <button onClick={onDelete}>Detele</button>
-                        </Link>
+                        {/* </div> */}
+                        <div className="form-group">
+                            <Link to="/">
+                                <button type="submit"
+                                    onClick={onSubmit}
+                                >Save</button>
+                            </Link>
+                            <button onClick={handleReset}>Reset</button>
+                            <Link to="/">
+                                <button onClick={handleDelete}>Detele</button>
+                            </Link>
+                        </div>
                     </form>
                 </div>
             </div>

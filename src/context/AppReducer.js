@@ -1,7 +1,7 @@
 const AppReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TASK":
-            const newArr = [...state.tasks, action.payload]
+            const newArr = [action.payload, ...state.tasks]
             return {
                 ...state,
                 tasks: newArr,
@@ -30,6 +30,11 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 filter: action.payload
+            }
+        case "SEARCH_TASK":
+            return {
+                ...state,
+                searchValue: action.payload
             }
         default:
             return state

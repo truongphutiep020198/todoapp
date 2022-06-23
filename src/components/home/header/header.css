@@ -1,4 +1,60 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: #675BF1;
+    height: 70px;
+}
+.header-createtask {
+    cursor: pointer;
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    background: #675BF1;
+    border: none;
+    outline: none;
+    border: 2px solid #FFFFFF;
+    border-radius: 0px 10px 10px 0px;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.header-search {
+    margin: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+.header-search input {
+    height: 44px;
+    width: 480px;
+    background: #675BF1;
+    border: none;
+    outline: none;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding-left: 15px;
+}
+.header-search input::placeholder {
+    color: #BBBBBB;
+}
+.header-search button {
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    margin-left: 10px;
+    background: #675BF1;
+    border: 2px solid #FFFFFF;
+    border-radius: 0px 10px 10px 0px;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #FFFFFF;
 }

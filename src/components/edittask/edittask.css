@@ -1,19 +1,60 @@
 .edit-task {
     width: 90%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+}
+.edit-task-form {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    border: 2px solid black;
-    height: 500px;
+    justify-content: center;
 }
 .edit-task-form input {
     display: flex;
 }
 .status-list {
+    margin: 20px 0;
     display: flex;
-    justify-content: space-around;
+  
 }
 .status-item {
-    margin-right: 10px;
+    margin-right: 50px;
+    font-size: 18px;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.form-group {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.form-group:last-child {
+    margin-top: 30px;
+}
+.form-group:last-child button {
+    width: 100px;
+    height: 50px;
+    background-color: #675BF1;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.form-group label{
+    font-weight: 600;
+    width: 20%;
+}
+.form-group input {
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid black;
 }
